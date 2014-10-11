@@ -6,6 +6,6 @@ class Question < ActiveRecord::Base
   belongs_to :user
 
   def self.random_unanswered_question(user_id)
-    where('user_id <> ?', user_id).order("RANDOM()").first
+    where('user_id != ?', user_id).order("RANDOM()").first
   end
 end
