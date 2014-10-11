@@ -12,9 +12,9 @@
     </thead>
     <tbody>
 <% @users.each do |user|%>
-            <tr id="<%= 'highlight' if user.id == @current_user.id%>">
-              <td>#<%= user.place %></td>
-              <td><%= user.total_score %></td>
+            <tr id="<%= 'highlight' if user.id == @current_user.id %>">
+              <td class="<%= 'highlight' if user.id == @current_user.id %>">#<%= user.place %></td>
+              <td class="<%= 'highlight' if user.id == @current_user.id %>"><%= user.total_score %></td>
             </tr>
 <% end %>
     </tbody>

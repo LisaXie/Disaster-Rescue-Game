@@ -1,8 +1,29 @@
 <div class="score">Your score: <%= @user.total_score if @user%> </div>
 <div class="clear"></div>
 <h1><%= @question.title %></h1>
-<img src="<%= @question.image_link %>" style="width: 600px"/>
+<img src="<%= @question.image_link %>" style="max-width: 400px; max-height: 400px"/>
 <p><%= @question.body %></p>
 <% @question.answers.each do |a|%>
-    <%= link_to "<span class='glyphicon glyphicon-star'></span>".html_safe + a.title, questions_update_score_path(:user_id => @user.id, :answer_id => a.id), :class => "btn btn-default btn-lg" %>
+    <div class="answer_wrapper">
+        <%= link_to "<span class='glyphicon glyphicon-star'></span>".html_safe + a.title, "#", :class => "btn btn-default btn-lg answer" %>
+        <div class="dialog">
+          <% if a.score.to_i > 20000 %>
+             <%= image_tag 'awesome.gif' %>
+          <% elsif a.score.to_i > 0 %>
+              <%= image_tag 'good.gif' %>
+          <% elsif a.score.to_i < -20000 %>
+              <%= image_tag 'bad.gif' %>
+          <% else %>
+              <%= image_tag 'baddish.gif' %>
+          <% end %>
+          <p><%= a.body %></p>
+          <%= link_to "<span class='glyphicon glyphicon-star'></span> Ok".html_safe, questions_update_score_path(:user_id => @user.id, :answer_id => a.id), :class => "btn btn-default btn-lg" %>
+        </div>
+    </div>
 <% end %>
+
+<script>
+    $('.answer').click(function() {
+        $(this).parent('div.answer_wrapper').find('div.dialog').dialog({width: 'auto'});
+    });
+</script>

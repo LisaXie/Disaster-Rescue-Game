@@ -7,6 +7,27 @@
   font-size: 24px;
 }
 
-#highlight{
-  background-color: darkgray;
+.highlight{
+  background-color: darkgray !important;
+  font-weight: bold;
+}
+
+.dialog{
+  display: none;
+  width: auto;
+  text-align: center;
+  p{
+    padding: 20px 0
+  }
+  img{
+    width: 400px
+  }
+}
+
+.answer{
+  margin: 10px
+}
+
+.ui-dialog-titlebar{
+  display:none
 }
