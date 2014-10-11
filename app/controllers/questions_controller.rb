@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:user_id])
+    redirect_to questions_scoreboard_path(:user_id => @user.id, :anchor => "highlight") if @user.questions.count == 6
     @question = Question.random_unanswered_question(@user.id)
     if @question.nil?
       redirect_to questions_scoreboard_path(:user_id => @user.id, :anchor => "highlight")
