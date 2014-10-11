@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2183865789">
+    <data-source source="LOCAL" name="Rails Disaster-Rescue-Game: test" uuid="d5d78d68-58cb-442a-a327-e6d857e4dc19">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:iulia_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Disaster-Rescue-Game: development" uuid="70c74152-8039-4363-8904-e3e0e46af73a">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:iulia_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Disaster-Rescue-Game: cucumber" uuid="04db5c4d-0f98-410e-a745-43fdcbc2f806">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:iulia_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Disaster-Rescue-Game: beta" uuid="f9eb101b-c49a-4343-b744-4b877012960f">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-243-137-0.compute-1.amazonaws.com/dcroro2m3m1cse</jdbc-url>
+      <user-name>zapzodkoqkdzxi</user-name>
+      <user-password>df98dfe1dfcfdff9df93df99df9edfe2dff2dfccdf98dfe4dfd2dfc2dfecdfe5dfc3df98dfe4dfcedf98dfe7dfe6dffedfc8df9c</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Disaster-Rescue-Game: production" uuid="b85ca857-67e3-45bb-9a4a-4f388e587778">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-243-137-0.compute-1.amazonaws.com/dcroro2m3m1cse</jdbc-url>
+      <user-name>zapzodkoqkdzxi</user-name>
+      <user-password>df98dfe1dfcfdff9df93df99df9edfe2dff2dfccdf98dfe4dfd2dfc2dfecdfe5dfc3df98dfe4dfcedf98dfe7dfe6dffedfc8df9c</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

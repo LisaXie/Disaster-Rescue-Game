@@ -36,3 +36,8 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# css framework
+gem 'skeleton-rails'
+
+gem 'pry'

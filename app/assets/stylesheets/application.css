@@ -9,5 +9,21 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require base
+ *= require layout
+ *= require skeleton
  *= require_tree .
  */
+
+#wrapper{
+    width: 100%;
+    text-align: center;
+}
+#container{
+    width: 1170px;
+    margin:0 auto;
+}
+
+.clear{
+    clear:both;
+}

@@ -1,4 +1,10 @@
 DisasterRescueGame::Application.routes.draw do
+  root :to => 'question#index'
+
+  get "question/show"
+
+  get "question/update_score"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
