@@ -1,0 +1,18 @@
+<fieldset style="border: 1px solid lightgray; width: 50%; margin:20px auto; ">
+  <div class="field">
+    <div class="field">
+      <%= f.label :title, "Text" %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :score %>
+      <%= f.text_field :score %>
+    </div>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div>
+  </div>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "Remove answer", '#', class: "remove_fields" %>
+</fieldset>

@@ -1,7 +1,0 @@
-<div class="score">Your score: <%= @user.total_score %> </div>
-<div class="clear"></div>
-<h1><%= @question.title %></h1>
-<p><%= @question.body %></p>
-<% @question.answers.each do |a|%>
-    <%= link_to "<span class='glyphicon glyphicon-star'></span>".html_safe + a.title, question_update_score_path(:user_id => @user.id, :answer_id => a.id), :class => "btn btn-default btn-lg" %>
-<% end %>

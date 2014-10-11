@@ -1,0 +1,28 @@
+<%= form_for( @question, :html => {:multipart => true} ) do |f| %>
+
+    <div class="field">
+      <%= f.label :title, 'Question' %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image_link, 'Image link' %>
+      <%= f.text_field :image_link %>
+    </div>
+
+    <div class="field">
+      <%= f.label :body, "Question explanation" %>
+      <%= f.text_area :body%>
+    </div>
+    <div class="field" >
+      <h5>Answers</h5>
+      <%= f.fields_for :answers do |builder| %>
+          <%= render 'answer_fields', f: builder %>
+      <% end %>
+      <%= link_to_add_fields "+ Add another answer", f, :answers %>
+    </div>
+
+    <div class="clear"></div>
+    <%= f.submit (@question.new_record? ? "Submit Question":"Update Question"), :class => "btn btn-large btn-primary", :style => "float:left; margin-top:20px; width: auto; min-width: 110px; padding-left:15px; padding-right:15px; ", :disable_with => "Processing" %>
+
+<% end %>

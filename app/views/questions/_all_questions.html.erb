@@ -1,0 +1,30 @@
+<div class="clear" style="height:20px;"></div>
+<!-- BEGIN EXAMPLE TABLE PORTLET-->
+<div class="portlet-body">
+  <h3 class="page-title">Questions</h3>
+  <table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_6" role="grid" aria-describedby="sample_6_info">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.id %></td>
+          <td><%= question.title %></td>
+          <td><%= question.body %></td>
+          <td><%= question.image_link %></td>
+          <td><%= link_to 'Edit', edit_question_path(question) %></td>
+          <td><%= link_to 'Destroy', { :controller => 'questions', :action => 'destroy', :id => question.id },
+                          { :confirm => 'Are you sure?', :method => :delete}  %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
