@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   def update_score
     user = User.find(params[:user_id])
     answer = Answer.find(params[:answer_id])
-    user.total_score += answer.score
+    user.total_score += answer.score.to_i
     user.questions << answer.question
     user.save!
     redirect_to questions_show_path(:user_id => user.id)
