@@ -5,14 +5,18 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.first(:order => "RANDOM()")
-    @user = User.find(params[:user_id])
+    @user = User.find_by_id(params[:user_id])
+    @question = Question.random_unanswered_question(@user.id)
+    if @question.nil?
+      redirect_to questions_scoreboard_path(:user_id => @user.id, :anchor => "highlight")
+    end
   end
 
   def update_score
     user = User.find(params[:user_id])
     answer = Answer.find(params[:answer_id])
     user.total_score += answer.score
+    user.questions << answer.question
     user.save!
     redirect_to questions_show_path(:user_id => user.id)
   end
@@ -65,6 +69,11 @@ class QuestionsController < ApplicationController
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def scoreboard
+    @users = User.all_ordered_by_position
+    @current_user = User.find(params[:user_id])
   end
 
   # DELETE /questions/1

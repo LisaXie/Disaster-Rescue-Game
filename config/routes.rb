@@ -4,6 +4,7 @@ DisasterRescueGame::Application.routes.draw do
 
   get "questions/update_score"
   get "questions/show"
+  get "questions/scoreboard"
 
   resources :questions, :except => ["show"]
 
