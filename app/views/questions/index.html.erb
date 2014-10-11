@@ -1,2 +1,75 @@
-<h1>Welcome to Disaster Rescue Game</h1>
-<%= link_to "<span class='glyphicon glyphicon-star'></span> Start".html_safe, questions_show_path(:user_id => @user.id), :class => "btn btn-default btn-lg" %>
+
+<!-- container -->
+
+<div class="st-container">
+
+  <input type="radio" name="radio-set" checked="checked" id="st-control-1"/>
+  <a href="#st-panel-1">Choose a Country</a>
+  <input type="radio" name="radio-set" id="st-control-2"/>
+  <a href="#st-panel-2">Map</a>
+  <input type="radio" name="radio-set" id="st-control-3"/>
+  <a href="#st-panel-3">Leaderboard</a>
+
+  <div class="st-scroll">
+
+    <!-- Placeholder text from http://hipsteripsum.me/ -->
+
+    <section class="st-panel" id="st-panel-1">
+
+      <div class="st-deco" data-icon="H"></div>
+      <h2>Bangal</h2>
+
+      <%= image_tag "bangals.jpg", :margin => "auto", :position => "relative", :style => "z-index: '9999'", :usemap => "#my_image"%>
+
+      <map name="my_image">
+        <area shape="rect" coords="20,65,50,95" onClick="document.getElementById('1st_sound').play(); return true;" />
+      </map>
+
+    </section>
+
+    <section class="st-panel st-color" id="st-panel-2">
+
+      <div class="st-deco" data-icon="2"></div>
+      <h2>Map</h2>
+      <p>Bangal is prone to Annual Flooding.</p>
+
+      <%= image_tag "codess.jpg", :margin => "auto",  :style => "padding-top: 400px;", :usemap => "#codessLand"%>
+
+      <map name="codessLand">
+        <area shape="rect" coords="0,0,82,126" href="<%= questions_show_path(:user_id => @user.id) %>" alt="">
+      </map>
+
+    </section>
+
+    <section class="st-panel" id="st-panel-3">
+      <div class="st-deco" data-icon="B"></div>
+      <h2>Leaderboard</h2>
+      <table border="5" cellpadding="5" cellspacing="5">
+        <thead>
+        <tr>
+          <th>Leaderboard</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+          <td colspan="2" align="center">Thanks for playing!</td>
+        </tr>
+        </tfoot>
+        <tr border="5" >
+          <td>Ann</td>
+          <td>Saved 500000 lives</td>
+        </tr>
+        <tr>
+          <td>Nimcy</td>
+          <td>Saved 350000 lives</td>
+        </tr>
+        <tr>
+          <td>Brenda</td>
+          <td>Saved 120000 lives</td>
+        </tr>
+      </table>
+    </section>
+
+  </div><!-- // st-scroll -->
+
+</div><!-- // st-container -->
